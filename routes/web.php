@@ -23,5 +23,5 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('user', [App\Http\Controllers\Aturan::class, 'index'])->middleware(['auth', 'role:user']);
+Route::get('user', [App\Http\Controllers\Aturan::class, 'index'])->middleware(['auth', 'role:user'])->name('admin.users');
 Route::get('admin',[App\Http\Controllers\Aturan::class, 'admin'])->middleware(['auth', 'role:admin']);
